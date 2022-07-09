@@ -3,11 +3,26 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import CancelledData from './components/CancelledData/CancelledData';
+import AlertData from './components/AlertData/AlertData';
+
+const client = new QueryClient();
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <QueryClientProvider client={client}> 
+    <BrowserRouter>
+      <Routes>
+        <Route exact path="/" element={ <App /> }>
+        <Route path="/Alerts" element={<AlertData />} />
+        <Route path="/Cancelled" element={<CancelledData />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+    </QueryClientProvider>
   </React.StrictMode>
 );
 
