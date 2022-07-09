@@ -38,6 +38,7 @@ export const HSL_ALERTS = gql
     route {
       gtfsId
       longName
+      shortName
     }
     stop {
       gtfsId
@@ -69,6 +70,7 @@ export const CANCELLED_TRIPS = gql
         route {
           gtfsId
           longName
+          shortName
         }
       }
       realtimeState
