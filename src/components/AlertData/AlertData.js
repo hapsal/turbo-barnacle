@@ -39,7 +39,7 @@ const AlertData = () => {
     })
   }
   
-  /* console.log(removeDuplicateObjects(data.alerts, 'alertDescriptionText')) */
+  /*  console.log(removeDuplicateObjects(data.alerts, 'alertDescriptionText'))  */
     return (
         <div className="d-grid gap-3">      
             {Array.isArray(data.alerts) ? removeDuplicateObjects(data.alerts, 'alertDescriptionText').sort((a, b) => a.effectiveStartDate > b.effectiveStartDate ? -1 : 1).map(result => (
