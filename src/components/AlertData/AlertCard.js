@@ -14,9 +14,9 @@ const AlertCard = ({alert}) => {
     const lon = alert.stop ? alert.stop.lon : 0;
 
     return (
-        <div key={alert.id} className="grid">
+        <div className="grid">
             <div className="g-col-6 p-2">
-                    <div className="card">
+                    <div className="card" key={alert.id}>
                         <div className={alert.alertSeverityLevel === 'WARNING' ? 'card text-bg-warning mb-3' : alert.alertSeverityLevel === 'SEVERE' ? 'card text-bg-danger mb-3'  : 'card text-bg-light mb-3'}>
                             <h5 className="card-header"><i class="bi bi-info-circle"></i> {alert.alertDescriptionText}</h5>
                         </div>

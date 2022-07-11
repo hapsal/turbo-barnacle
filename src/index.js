@@ -7,6 +7,7 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import CancelledData from './components/CancelledData/CancelledData';
 import AlertData from './components/AlertData/AlertData';
+import RoutesData from "./components//Routes/RoutesData";
 
 const client = new QueryClient();
 
@@ -19,6 +20,7 @@ root.render(
         <Route exact path="/" element={ <App /> }>
         <Route path="/Alerts" element={<AlertData />} />
         <Route path="/Cancelled" element={<CancelledData />} />
+        <Route path="/Routes" element={<RoutesData />}/>
         </Route>
       </Routes>
     </BrowserRouter>

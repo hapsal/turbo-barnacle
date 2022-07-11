@@ -78,3 +78,16 @@ export const CANCELLED_TRIPS = gql
     }
   }
 `
+
+export const ROUTES_QUERY = gql
+`
+{
+  routes(transportModes: BUS) {
+    gtfsId
+    shortName
+    longName
+    mode
+  }
+}
+
+`

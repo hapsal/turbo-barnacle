@@ -8,14 +8,15 @@ import axios from "axios";
 const endpoint = "https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql/";
 
 const CancelledData = () => {
-    const { data, isLoading, error } = useQuery("cancelData", () => {
-        return axios({
+    const { data, isLoading, error } = useQuery("cancelData", async () => {
+        const response = await axios({
             url: endpoint,
             method: "POST",
             data: {
                 query: CANCELLED_TRIPS
             }
-        }).then(response => response.data.data)
+        });
+        return response.data.data;
       });
 
       

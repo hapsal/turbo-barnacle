@@ -8,8 +8,8 @@ import AlertCard from "./AlertCard";
 const endpoint = "https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql/"; 
 
 const AlertData = () => {
-      const { data, isLoading, error } = useQuery("alertData", () => {
-        return axios({
+      const { data, isLoading, error } = useQuery("alertData", async() => {
+        return await axios({
             url: endpoint,
             method: "POST",
             data: {

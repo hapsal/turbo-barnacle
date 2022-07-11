@@ -6,9 +6,9 @@ const CancelCard = ({data, tripData}) => {
     let date = new Date(null);
     date.setSeconds(data.scheduledDeparture);
     return (
-        <div key={data.id} className="grid">
+        <div className="grid">
             <div className="g-col-6 p-2">
-                <div className="card">
+                <div className="card" key={data.id}>
                     <div className={data.realtimeState === 'CANCELED' ? 'card text-bg-danger mb-3' : 'card text-bg-light mb-3'}>
                         <h5 className='card-header'><i class="bi bi-exclamation-triangle"></i> {data.headsign}</h5>
                     </div>
