@@ -5,13 +5,10 @@ import { useQuery } from "react-query";
 import { ROUTES_QUERY } from "../../GqlQueries";
 import Table from "./Table";
 
-const endpoint = "https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql/"; 
-
 const RoutesData = () => {
-    
       const { data, isLoading, error } = useQuery("routesData", async () => {
         const response = await axios({
-              url: endpoint,
+              url: process.env.REACT_APP_API_KEY,
               method: "POST",
               data: {
                   query: ROUTES_QUERY

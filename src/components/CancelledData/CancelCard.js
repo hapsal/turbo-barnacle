@@ -3,8 +3,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 const CancelCard = ({data, tripData}) => {
-    let date = new Date(null);
-    date.setSeconds(data.scheduledDeparture);
     return (
         <div className="grid">
             <div className="g-col-6 p-2">

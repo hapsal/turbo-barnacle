@@ -5,12 +5,10 @@ import {CANCELLED_TRIPS } from "../../GqlQueries";
 import CancelCard from "./CancelCard";
 import axios from "axios";
 
-const endpoint = "https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql/";
-
 const CancelledData = () => {
     const { data, isLoading, error } = useQuery("cancelData", async () => {
         const response = await axios({
-            url: endpoint,
+            url: process.env.REACT_APP_API_KEY,
             method: "POST",
             data: {
                 query: CANCELLED_TRIPS

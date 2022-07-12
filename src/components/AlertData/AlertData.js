@@ -5,12 +5,10 @@ import { useQuery } from "react-query";
 import { HSL_ALERTS } from "../../GqlQueries";
 import AlertCard from "./AlertCard";
 
-const endpoint = "https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql/"; 
-
 const AlertData = () => {
       const { data, isLoading, error } = useQuery("alertData", async() => {
         return await axios({
-            url: endpoint,
+            url: process.env.REACT_APP_API_KEY,
             method: "POST",
             data: {
                 query: HSL_ALERTS
